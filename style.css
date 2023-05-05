@@ -29,7 +29,7 @@ main{
 }
 
 #timer {
-    font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+    font-size: clamp(4rem, 4rem + 10vw, 8.7rem);
     display: flex;
     margin-bottom: 1.6rem;
 }
