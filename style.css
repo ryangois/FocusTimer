@@ -1,1 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #121212;
+    --primary-color: #7B68EE;
+    --bg-primary-dark: #7B68EE21;
+    --text-color: #FFFFFF;
+
+    font-size: 10px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    min-height: 100vh;
+}
+
+main{
+    justify-self: center;
+    align-self: flex-end;
+}
+
+#timer {
+    font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+    display: flex;
+    margin-bottom: 1.6rem;
+}
+
+#controls {
+    background-color: var(--bg-primary-dark);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+    width: clamp(10rem, 10rem + 30vw, 22.8rem);
+    height: clamp(7rem, 5rem + 10vw, 10.8rem);
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button svg {
+    width: clamp(3.2rem, 2rem + 12vw, 6.4rem);
+}
+
+.play svg path,
+.pause svg path,
+.sound svg path {
+    fill: var(--primary-color);
+}
+
+.hide {
+    display: none;
+}
+
+footer{
+    align-self: flex-end;
+    justify-self: end;
+    padding: 0 4rem 3.2rem 0;
+}
