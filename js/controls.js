@@ -2,7 +2,9 @@ export default function Controls({
     playButton,
     pauseButton,
     setButton,
-    stopButton
+    stopButton,
+    soundButton,
+    muteButton
 }) {
 
     function changeClasses(hideButton, showButton) {
@@ -24,6 +26,14 @@ export default function Controls({
         changeClasses(stopButton, setButton);
     }
 
+    function soundOn() {
+        changeClasses(soundButton, muteButton)
+    }
+
+    function soundOff() {
+        changeClasses(muteButton, soundButton)
+    }
+
     function getMinutes() {
         let promptMinutes = prompt("How many minutes?")
         if (!promptMinutes) {
@@ -43,6 +53,8 @@ export default function Controls({
         play,
         pause,
         reset,
+        soundOn,
+        soundOff,
         getMinutes,
         stop
     }
