@@ -61,8 +61,30 @@ button svg {
     fill: var(--primary-color);
 }
 
+button svg path {
+    fill:var(--text-color);
+}
+
+.sound-on path{
+    fill: var(--primary-color);
+}
+
+.sound-on{
+    background-color: var(--bg-primary-dark);
+    border-radius: 20px;
+}
+
 .hide {
     display: none;
+}
+
+#bg-sounds {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
 }
 
 footer{
