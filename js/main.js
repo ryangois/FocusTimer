@@ -1,5 +1,7 @@
 import Controls from "./controls.js"
 import Timer from "./timer.js"
+import Sound from "./sounds.js"
+import Events from "./events.js"
 import {
     playButton,
     pauseButton,
@@ -15,7 +17,9 @@ const controls = Controls({
     playButton,
     pauseButton,
     setButton,
-    stopButton
+    stopButton,
+    soundButton,
+    muteButton
 })
 
 const timer = Timer({
@@ -24,33 +28,6 @@ const timer = Timer({
     resetControls: controls.reset,
 })
 
-playButton.addEventListener("click", () => {
-    controls.play()
-    timer.countdown()
-})
+const sound = Sound()
 
-pauseButton.addEventListener("click", () => {
-    controls.pause()
-    timer.hold()
-})
-
-setButton.addEventListener("click", () => {
-    let newMinutes = controls.getMinutes()
-
-    if (!newMinutes) {
-        timer.reset()
-        return
-    }
-
-    timer.displayUpdate(newMinutes, 0)
-    timer.updateMinutes(newMinutes)
-})
-
-stopButton.addEventListener("click", () => {
-    controls.stop()
-    timer.reset()
-})
-
-soundButton.addEventListener("click", () => changeClasses(soundButton, muteButton))
-
-muteButton.addEventListener("click", () => changeClasses(muteButton, soundButton))
+Events({controls, timer, sound})
