@@ -1,1 +1,1 @@
-# rocket
+# Focus Timer (Pomodoro style)
